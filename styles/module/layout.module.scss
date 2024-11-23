@@ -1,0 +1,45 @@
+@import '../global/colors.scss';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  .navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: transparent;
+    color: $color-secondary;
+  }
+
+.logo {
+    color: $color-secondary;
+    font-size: 1.2rem;
+  }
+  
+  
+  .hamburger {
+    display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: 24px;
+      width: 30px;
+      cursor: pointer;
+  
+      div {
+        height: 4px;
+        background-color: $color-text;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+      }
+  }
+  
