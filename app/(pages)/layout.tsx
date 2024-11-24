@@ -5,7 +5,7 @@ export default function layout({ children }: { children: React.ReactNode }) {
     <div className={styles.container}>
       {/* Navigation Bar */}
       <header className={styles.navbar}>
-        <div className={styles.logo}>LOGO</div>
+        <div className={styles.logo}>dhf.ai</div>
         <div className={styles.hamburger}>
           <div />
           <div />
