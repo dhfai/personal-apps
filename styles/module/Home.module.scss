@@ -1,26 +1,138 @@
 @import '../global/colors.scss';
 
-
 .container {
   display: flex;
+  flex-direction: column;
   height: 100vh;
-  width: 100%;
-  overflow-x: hidden;
+  // overflow-y: scroll;
+  // scroll-snap-type: y mandatory;
 }
+
+.pageContainer {
+  display: flex;
+  height: 100vh;
+  // scroll-snap-align: start;
+}
+
 
 .left {
   flex: 1;
-  // background-color: $color-border;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  color: $color-text;
+  position: relative;
+
+  .svgPath {
+    // width: 100%;
+    // height: 100vh;
+    // position: absolute;
+    top: 0;
+    margin-left: -100%;
+    color: $color-secondary;
+
+  //   svg {
+  //     width: 120%;
+  //     height: 100%;
+
+  //     path {
+  //       stroke: #00c0ff;
+  //       fill: none;
+  //       stroke-width: 10px;
+  //       stroke-miterlimit: 10;
+  //       stroke-linecap: round;
+  //       stroke-linejoin: round;
+  //     }
+  //   }
+
+
+  #lineSvg {
+    margin: 2rem auto;
+    position: absolute;
+    top: 0;
+  }
+  .lineCircle {
+    transform-box: fill-box;
+    offset-anchor: 0% 50%;
+    offset-rotate: auto;
+    offset-path: url('#lineRunning'); 
+    animation: move 10s forwards linear;
+     animation-timeline: scroll();
+  }
+  @keyframes move {
+    to {
+      offset-distance: 100%;
+    }
+  }
+   #lineRunning {
+    stroke: $color-secondary;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: line-animation 5s linear forwards;
+    animation-timeline: scroll();
+  }
+  @keyframes line-animation {
+    from {
+      stroke-dashoffset: 1;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+}
 }
 
 .right {
   flex: 2;
-  padding: 2rem;
-  color: $color-text;
-  // background-color: $color-primary;
+  display: grid;
+  place-items: center;
+
+  .snapSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    // background-color: red;
+    
+    .title {
+      color: #fff;
+      font-size: 2rem;
+      margin-left: -30rem;
+    }
+
+    .title span {
+      color: $color-secondary;
+      font-size: 4rem;
+      text-transform: uppercase;
+    }
+    .rightText {
+      // background: red;
+      // padding-right: 1rem;
+      text-align: center;
+      width:  50%;
+      align-items: end;
+      margin-right: -30rem;
+      gap: 1rem;
+        h1 {
+          font-size: 5rem;
+          color: #fff;
+          text-transform: uppercase;
+          // margin-left: 20rem;
+          margin-top: -2rem;
+      }
+
+      p {
+          font-size:.8rem;
+          color: #BEBEBE;
+          // background:red;
+          padding: 0 1.5rem;
+          // margin-left: 20rem;
+          // margin-top: -1.5rem;
+          margin-top: -4rem;
+          text-align: center;
+          
+      }
+    }
+  }
 }

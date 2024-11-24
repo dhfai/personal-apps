@@ -2,7 +2,7 @@ import '@/styles/global/global.scss';
 import { ReactNode } from 'react';
 
 export const metadata = {
-  title: 'Fullstack Developer Portfolio',
+  title: 'DHFAI',
   description: 'Portfolio of Dhia Dhaifullah as a Fullstack Developer',
 };
 
