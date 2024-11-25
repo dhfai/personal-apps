@@ -26,3 +26,11 @@ body {
   width: 100%;
   height: 100%;
 }
+
+@media screen and (max-width: 768px) {
+  html, body {
+    background-color: $color-primary;
+    z-index: -999;
+    background-image: none;
+  }
+}
